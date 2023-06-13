@@ -12,7 +12,7 @@ export default function List() {
   const arrowItems = numbers.map((number, index) => <li key={index}>{number}</li>);
 
   const style = {
-    'list-style-type': 'none',
+    'listStyleType': 'none',
     'border': 'solid 1px #000', 
     'margin': '20px auto',
     'width': '25%',
