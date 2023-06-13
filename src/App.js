@@ -2,7 +2,7 @@ import './App.css';
 import Button from './components/Button';
 import List from './components/List';
 import Select from './components/Select';
-
+import Reducer from './components/Reducer';
 import React, { useEffect, useState, useContext, createContext } from 'react';
 import axios from 'axios';
 
@@ -41,7 +41,7 @@ function App() {
       <div className="App">
         <h3>React 16 App:</h3>
         Async Message: { message }      
-
+        <Reducer array={[1,2,3,4]} />
         <Button />
         <List />
         <Select />

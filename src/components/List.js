@@ -11,6 +11,13 @@ export default function List() {
   // Arrow Function
   const arrowItems = numbers.map((number, index) => <li key={index}>{number}</li>);
 
+  const style = {
+    'list-style-type': 'none',
+    'border': 'solid 1px #000', 
+    'margin': '20px auto',
+    'width': '25%',
+    'padding': '20px',
+  }
 
   // This with Arrow Functions
   const arrowObj = {
@@ -59,11 +66,14 @@ export default function List() {
   return (
     <div>
       <h2>List Items</h2>
-      <ul>
+
+      <ul style={style}>
         {listItems}
       </ul>
+      
       <h2>Arrow Items</h2>
-      <ul>
+      
+      <ul style={style}>
         { arrowItems}
       </ul>
 
