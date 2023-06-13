@@ -37,7 +37,7 @@ function App() {
   }
 
   return (
-    <ThemeContext.Provider value={'Them Color'}>
+    <ThemeContext.Provider value={'Theme Color'}>
       <div className="App">
         <h3>React 16 App:</h3>
         Async Message: { message }      

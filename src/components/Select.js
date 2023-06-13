@@ -5,8 +5,6 @@ export default function Select() {
   const [themeValue, setThemeValue] = useState('');
   const theme = useContext(ThemeContext);
 
-
-
   return (
     <Fragment>
       <h3>Theme Value: {themeValue ? themeValue : theme}</h3>
