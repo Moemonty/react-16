@@ -3,8 +3,10 @@ import Button from './components/Button';
 import List from './components/List';
 import Select from './components/Select';
 import Reducer from './components/Reducer';
-import React, { useEffect, useState, useContext, createContext } from 'react';
+import React, { useEffect, useState, useCallback, useContext, createContext } from 'react';
 import axios from 'axios';
+import Usecallback from "./components/Usecallback";
+import Usememo from "./components/Usememo";
 
 
 //exported to be used elsewhere in components
@@ -34,20 +36,23 @@ function App() {
 
   if (isLoading) {
     return 'Loading...';
+  } else {
+    return (
+        <ThemeContext.Provider value={'Light'}>
+          <div className="App">
+            <h3>React 16 App:</h3>
+            Async Message: { message }
+            
+            {/*<Usecallback />*/}
+            <Usememo />
+            {/*<Reducer array={[1,2,3,4]} />*/}
+            {/*<Button />*/}
+            {/*<List />*/}
+            {/*<Select />*/}
+          </div>
+        </ThemeContext.Provider>
+    );
   }
-
-  return (
-    <ThemeContext.Provider value={'Theme Color'}>
-      <div className="App">
-        <h3>React 16 App:</h3>
-        Async Message: { message }      
-        <Reducer array={[1,2,3,4]} />
-        <Button />
-        <List />
-        <Select />
-      </div>
-    </ThemeContext.Provider>
-  );
 }
 
 export default App;

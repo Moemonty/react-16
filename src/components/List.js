@@ -19,6 +19,7 @@ export default function List() {
     'padding': '20px',
   }
 
+  console.log('test');
   // This with Arrow Functions
   const arrowObj = {
     name: "John",
@@ -44,7 +45,7 @@ export default function List() {
   const funcObjUnbound = {
     name: "John",
     sayHello: function() {
-      window.name = 'Global Name';
+      // window.name = 'Global Name';
       setTimeout(function() {
         console.log("Hello, " + this.name);
       }, 1000);
@@ -54,6 +55,7 @@ export default function List() {
   const arrowFunc = () => {
     arrowObj.sayHello();
   }
+
 
   const callFunc = () => {
     funcObj.sayHello();
