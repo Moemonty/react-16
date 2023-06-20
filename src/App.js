@@ -7,6 +7,7 @@ import React, { useEffect, useState, useCallback, useContext, createContext } fr
 import axios from 'axios';
 import Usecallback from "./components/Usecallback";
 import Usememo from "./components/Usememo";
+import Useref from "./components/Useref";
 
 
 //exported to be used elsewhere in components
@@ -45,6 +46,7 @@ function App() {
             
             {/*<Usecallback />*/}
             <Usememo />
+            {/*<Useref />*/}
             {/*<Reducer array={[1,2,3,4]} />*/}
             {/*<Button />*/}
             {/*<List />*/}
