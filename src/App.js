@@ -9,6 +9,7 @@ import Usecallback from "./components/Usecallback";
 import Usememo from "./components/Usememo";
 import Useref from "./components/Useref";
 import LayoutEffect from "./components/Layouteffect";
+import Localfun from "./components/Localfun";
 
 //exported to be used elsewhere in components
 export const ThemeContext = createContext('Light');
@@ -49,6 +50,7 @@ function App() {
             {/*<Usecallback />*/}
             <Usememo />
             <LayoutEffect />
+            <Localfun name={'Your Name!'}/>
             {/*<Useref />*/}
             {/*<Reducer array={[1,2,3,4]} />*/}
             {/*<Button />*/}
