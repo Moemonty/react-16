@@ -38,10 +38,6 @@ function App() {
     }
   };
   
-  // return (
-  //   <div>Test</div>
-  // );
-  
   if (isLoading) {
     return 'Loading...';
   } else {
@@ -50,7 +46,6 @@ function App() {
           <div className="App">
             <h3>React 16 App:</h3>
             Async Message: { message }
-
             {/*<Usecallback />*/}
             <Usememo />
             <LayoutEffect />
