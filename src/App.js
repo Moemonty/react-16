@@ -10,8 +10,6 @@ import Usememo from "./components/Usememo";
 import Useref from "./components/Useref";
 import LayoutEffect from "./components/Layouteffect";
 
-
-
 //exported to be used elsewhere in components
 export const ThemeContext = createContext('Light');
 
@@ -20,9 +18,12 @@ function App() {
   const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
+    console.log('load');
+    console.log(message);
     loadMessage();
+    // adding message below will cause an additional render and cause performance issues
   }, []);
-
+  
   const loadMessage = async () => {
     try {
       setIsLoading(true);
@@ -36,7 +37,11 @@ function App() {
       setIsLoading(false);
     }
   };
-
+  
+  // return (
+  //   <div>Test</div>
+  // );
+  
   if (isLoading) {
     return 'Loading...';
   } else {
@@ -45,7 +50,7 @@ function App() {
           <div className="App">
             <h3>React 16 App:</h3>
             Async Message: { message }
-            
+
             {/*<Usecallback />*/}
             <Usememo />
             <LayoutEffect />
