@@ -18,26 +18,55 @@ function App() {
   const [message, setMessage] = useState('Loading');
   const [isLoading, setIsLoading] = useState(false);
 
+  const testLetVar = () => {
+    var guessMe1 = 1;
+    let guessMe2 = 2;
+    
+    {
+      let guessMe2 = 3;
+      
+      try {
+        console.log( guessMe1, guessMe2 ); // (A)
+      } catch(err){console.log("Error");}
+      
+      console.log( guessMe1, guessMe2 ); // (B)
+    }
+    
+    console.log( guessMe1, guessMe2 ); // (C)
+    
+    const print_func = () => {
+      
+      var guessMe1 = 5;
+      console.log( guessMe1 ); // (D)
+      let guessMe2 = 6;
+      console.log( guessMe1, guessMe2 ); // (E)
+    };
+    
+    print_func();
+    console.log( guessMe1, guessMe2 ); // (F)
+  }
+  
   useEffect(() => {
     console.log('load');
     console.log(message);
-    loadMessage();
+    // testLetVar();
+    // loadMessage();
     // adding message below will cause an additional render and cause performance issues
   }, []);
   
-  const loadMessage = async () => {
-    try {
-      setIsLoading(true);
-      const response = await axios.get(
-        'https://json.versant.digital/.netlify/functions/fake-api/message'
-      );
-      setMessage(response.data);
-      setIsLoading(false);
-    } catch (e) {
-      setMessage(e.message);
-      setIsLoading(false);
-    }
-  };
+  // const loadMessage = async () => {
+  //   try {
+  //     setIsLoading(true);
+  //     const response = await axios.get(
+  //       'https://json.versant.digital/.netlify/functions/fake-api/message'
+  //     );
+  //     setMessage(response.data);
+  //     setIsLoading(false);
+  //   } catch (e) {
+  //     setMessage(e.message);
+  //     setIsLoading(false);
+  //   }
+  // };
   
   if (isLoading) {
     return 'Loading...';
@@ -48,9 +77,9 @@ function App() {
             <h3>React 16 App:</h3>
             Async Message: { message }
             {/*<Usecallback />*/}
-            <Usememo />
-            <LayoutEffect />
-            <Localfun name={'Your Name!'}/>
+            {/*<Usememo />*/}
+            {/*<LayoutEffect />*/}
+            {/*<Localfun name={'Your Name!'}/>*/}
             {/*<Useref />*/}
             {/*<Reducer array={[1,2,3,4]} />*/}
             {/*<Button />*/}
